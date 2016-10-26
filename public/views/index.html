@@ -10,20 +10,72 @@
   <script src="scripts/people.controller.js" charset="utf-8"></script>
 
   <link rel="stylesheet" href="vendors/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body ng-controller="PeopleController as ctrl">
-  <button ng-click="ctrl.listPeople()">Get People</button>
 
-  <ul>
-    <li ng-repeat="person in ctrl.people">
-      <p>{{person.name}}</p>
-    </li>
-  </ul>
+<div class="container">
 
-  <div>
-    <label>Name:</label>
-    <input type="text" ng-model="ctrl.name">
-    <button ng-click="ctrl.addPerson()">Add Person</button>
+<div class="col-md-8">
+<div class="row">
+  <table class="table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Hometown</th>
+      <th>Favorite Movie</th>
+    </tr>
+    <tr ng-repeat="person in ctrl.people | orderBy:sortBy">
+      <td scope="row">{{person.name}}</td>
+      <td scope="row">{{person.hometown}}</td>
+      <td scope="row">{{person.movie}}</td>
+    </tr>
+  </table>
   </div>
+  </div>
+
+  <div class="col-md-4">
+    <div id="form">
+
+
+
+    <h2>Add yourself!</h2>
+
+    <div class="form-group row">
+      <label class="col-xs-2 col-form-label">Name:</label>
+      <div class="col-xs-10"><input type="text" ng-model="ctrl.name"></div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-xs-2 col-form-label">Hometown:</label>
+      <div class="col-xs-10"><input type="text" ng-model="ctrl.hometown"></div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-xs-2 col-form-label">Favorite Movie:</label>
+      <div class="col-xs-10"><input type="text" ng-model="ctrl.movie"></div>
+  </div>
+
+
+  <div class="row" id="add"><button ng-click="ctrl.addPerson()">Add Person</button></div>
+
+</div>
+
+  <div class="row" id="get">
+
+    <button ng-click="ctrl.listPeople()">Show People</button>
+    <label>Sort By: (A-Z)</label>
+    <select ng-model="sortBy">
+    <option value="name">Name</option>
+    <option value="hometown">Hometown</option>
+    <option value="movie">Movie</option>
+  </select>
+  </div>
+
+
+  </div>
+
+
+  </div>
+
 </body>
 </html>

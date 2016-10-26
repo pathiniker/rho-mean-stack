@@ -1,0 +1,50 @@
+body {
+  background-color: skyblue;
+}
+
+table {
+  margin: 50px auto;
+  text-align: center;
+  border: 2px solid black;
+}
+
+th {
+  padding: 5px 60px;
+  background-color: tomato;
+}
+
+td {
+  padding: 5px;
+}
+
+#form {
+  background-color: tomato;
+  padding: 15px;
+  margin-top: 50px;
+
+}
+
+.table-striped {
+  background-color: lightgrey;
+}
+
+input {
+  width: 70%;
+  margin-left: 50px;
+}
+
+.col-form-label {
+  width: 50%;
+}
+
+#get {
+  margin-top: 50px;
+}
+
+#add {
+  margin-left: 100px;
+}
+
+h2 {
+  text-align: center;
+}
